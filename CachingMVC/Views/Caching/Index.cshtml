@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CachingMVC.Models.GATOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>GATOS</h2>
+<div id="gato"></div>
+<h3 style="color:brown">@ViewBag.Hora</h3>
+<table class="table">
+    <tr>
+        <th>IMAGEN</th>
+        <th>RAZA</th>
+        <th>ORIGEN</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="~/Img/@item.FOTO" style="width:100px;height:100px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RAZA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ORIGEN)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Index", new { id = item.Id })
+
+            </td>
+        </tr>
+    }
+</table>

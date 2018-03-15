@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CACHINGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GATOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RAZA" Type="nvarchar" MaxLength="50" />
+          <Property Name="ORIGEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="TIPO_PELO" Type="nvarchar" MaxLength="50" />
+          <Property Name="CANTIDAD" Type="int" />
+          <Property Name="FECHA_LLEGADA" Type="nvarchar" MaxLength="50" />
+          <Property Name="FOTO" Type="nvarchar" MaxLength="50" />
+          <Property Name="INFO" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="CACHINGModelStoreContainer">
+          <EntitySet Name="GATOS" EntityType="Self.GATOS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CACHINGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GATOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RAZA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TIPO_PELO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CANTIDAD" Type="Int32" />
+          <Property Name="FECHA_LLEGADA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FOTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="INFO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ContextoBBDD" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GATOS" EntityType="Self.GATOS" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CACHINGModelStoreContainer" CdmEntityContainer="ContextoBBDD">
+          <EntitySetMapping Name="GATOS">
+            <EntityTypeMapping TypeName="CACHINGModel.GATOS">
+              <MappingFragment StoreEntitySet="GATOS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RAZA" ColumnName="RAZA" />
+                <ScalarProperty Name="ORIGEN" ColumnName="ORIGEN" />
+                <ScalarProperty Name="TIPO_PELO" ColumnName="TIPO_PELO" />
+                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+                <ScalarProperty Name="FECHA_LLEGADA" ColumnName="FECHA_LLEGADA" />
+                <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+                <ScalarProperty Name="INFO" ColumnName="INFO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
